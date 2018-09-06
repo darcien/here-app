@@ -8,7 +8,19 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "jest",
+    "testWithCoverage": "jest --coverage",
+    "testWatch": "jest --coverage --watch",
+    "clean": "rimraf build",
+    "tsc": "tsc",
+    "build": "yarn clean && yarn tsc",
+    "watch": "yarn build -w",
+    "watchAndRunAndroid": "concurrently \"yarn watch\" \"yarn android\"",
+    "buildRunAndroid": "yarn build && yarn watchAndRunAndroid ",
+    "watchAndRunIOS": "concurrently \"yarn watch\" \"yarn ios\"",
+    "buildRunIOS": "yarn build && yarn watchAndRunIOS ",
+    "watchAndStart": "concurrently \"yarn watch\" \"yarn start\"",
+    "buildAndStart": "yarn build && yarn watchAndStart "
   },
   "dependencies": {
     "expo": "^27.0.1",
@@ -16,11 +28,37 @@
     "react-native": "~0.55.2"
   },
   "devDependencies": {
-    "react-native-scripts": "1.14.0",
+    "@types/jest": "^23.3.1",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-native": "^0.56.17",
+    "@types/react-test-renderer": "^16.0.2",
+    "concurrently": "^4.0.1",
     "jest-expo": "~27.0.0",
-    "react-test-renderer": "16.3.1"
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.3"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|/src/.*\\.(test|spec))\\.(jsx?|tsx?)$",
+    "testPathIgnorePatterns": ["<rootDir>/build/", "<rootDir>/node_modules/"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "ios.ts",
+      "ios.tsx",
+      "android.ts",
+      "android.tsx"
+    ]
   }
 }
