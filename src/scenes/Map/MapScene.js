@@ -1,18 +1,21 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
 
-export default class MapScene extends React.Component {
+import MapView from '../../components/MapView';
+
+export default class MapScene extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Map.</Text>
+      <View style={styles.root}>
+        <Text>Select a Trash Bin</Text>
+        <MapView />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
+let styles = StyleSheet.create({
+  root: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
