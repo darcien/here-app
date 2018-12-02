@@ -27,7 +27,8 @@
   "dependencies": {
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-navigation": "^3.0.4"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^16.0.7",
     "@types/react-native": "^0.56.17",
     "@types/react-native-material-ui": "^1.31.0",
+    "@types/react-navigation": "^2.13.7",
     "@types/react-test-renderer": "^16.0.2",
     "concurrently": "^4.0.1",
     "jest-expo": "~27.0.0",
