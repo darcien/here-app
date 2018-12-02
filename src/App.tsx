@@ -1,21 +1,9 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {createDrawerNavigator} from 'react-navigation';
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello World.</Text>
-      </View>
-    );
-  }
-}
+import AboutScreen from './screens/About/AboutScreen';
+import MapScreen from './screens/Map/MapScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+export default createDrawerNavigator({
+  Map: MapScreen,
+  About: AboutScreen,
 });
