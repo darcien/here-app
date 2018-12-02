@@ -19,6 +19,11 @@
 ; Ignore metro
 .*/node_modules/metro/.*
 
+; Ignore problematic package
+.*/node_modules/expo/.*
+.*/node_modules/xdl/.*
+.*/node_modules/fbemitter/.*
+
 [include]
 
 [libs]

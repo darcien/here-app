@@ -1,15 +1,19 @@
 // @flow
-import {createBottomTabNavigator} from 'react-navigation';
+import {createDrawerNavigator} from 'react-navigation';
 
-import FeedScene from './components/scenes/FeedScene/FeedScene';
+import AboutScene from './scenes/About/AboutScene';
+import MapScene from './scenes/Map/MapScene';
 
-export default createBottomTabNavigator(
+export default createDrawerNavigator(
   {
-    Feed: {
-      screen: FeedScene,
+    Map: {
+      screen: MapScene,
+    },
+    About: {
+      screen: AboutScene,
     },
   },
   {
-    initialRouteName: 'Feed',
+    initialRouteName: 'Map',
   },
 );
