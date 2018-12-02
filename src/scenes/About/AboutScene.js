@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-export default class App extends React.Component {
+export default class MapScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Feed.</Text>
+        <Text>About.</Text>
       </View>
     );
   }
