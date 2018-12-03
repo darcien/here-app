@@ -29,7 +29,7 @@ export default class MapScene extends Component<Props, State> {
         <Toolbar
           leftElement="menu"
           onLeftElementPress={this.props.navigation.toggleDrawer}
-          centerElement="Select nearby Qui"
+          centerElement="Select a nearby Qui"
           rightElement={selectedMarker ? 'done' : null}
           onRightElementPress={this._onDonePress}
         />
@@ -41,6 +41,7 @@ export default class MapScene extends Component<Props, State> {
     );
   }
 
+  // TODO: Add way do deselect.
   _onMarkerPress = (marker: MarkerShape) => {
     this.setState({
       selectedMarker: marker,
@@ -48,7 +49,9 @@ export default class MapScene extends Component<Props, State> {
   };
 
   _onDonePress = () => {
-    // Navigate
+    this.props.navigation.navigate('Confirmation', {
+      selectedQui: this.state.selectedMarker,
+    });
   };
 }
 
