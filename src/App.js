@@ -5,6 +5,7 @@ import {AppLoading} from 'expo';
 
 import AboutScene from './scenes/About/AboutScene';
 import MapScene from './scenes/Map/MapScene';
+import RewardScene from './scenes/Reward/RewardScene';
 
 import cacheFonts from './helpers/cacheFonts';
 
@@ -20,9 +21,12 @@ let Router = createDrawerNavigator(
     About: {
       screen: AboutScene,
     },
+    Reward: {
+      screen: RewardScene,
+    },
   },
   {
-    initialRouteName: 'Map',
+    initialRouteName: 'Reward',
   },
 );
 
