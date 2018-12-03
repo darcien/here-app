@@ -1,13 +1,24 @@
+// @flow
+
 import React, {Component} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import {Toolbar} from 'react-native-material-ui';
 
 import MapView from '../../components/MapView';
 
-export default class MapScene extends Component {
+type Props = {
+  navigation: *,
+};
+
+export default class MapScene extends Component<Props> {
   render() {
     return (
       <View style={styles.root}>
-        <Text>Select a Trash Bin</Text>
+        <Toolbar
+          leftElement="menu"
+          onLeftElementPress={this.props.navigation.toggleDrawer}
+          centerElement="Select a Qui"
+        />
         <MapView />
       </View>
     );
@@ -18,7 +29,5 @@ let styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
