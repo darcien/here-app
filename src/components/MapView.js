@@ -4,18 +4,65 @@ import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {MapView as MapViewBase} from 'expo';
 
-let initialRegion = {
+import Marker from './Marker';
+
+import type {Marker as MarkerShape, Region} from '../types/Maps';
+
+let initialRegion: Region = {
   latitude: -6.221965,
   longitude: 106.632696,
   latitudeDelta: 0.0022,
   longitudeDelta: 0.0021,
 };
 
+let markers: MarkerShape[] = [
+  {
+    id: '1',
+    coordinate: {
+      latitude: -6.221965,
+      longitude: 106.632696,
+    },
+    title: '1',
+    description: '1',
+  },
+  {
+    id: '2',
+    coordinate: {
+      latitude: -6.221964,
+      longitude: 106.632698,
+    },
+    title: '2',
+    description: '1',
+  },
+  {
+    id: '3',
+    coordinate: {
+      latitude: -6.221963,
+      longitude: 106.632693,
+    },
+    title: '3',
+    description: '1',
+  },
+  {
+    id: '4',
+    coordinate: {
+      latitude: -6.221967,
+      longitude: 106.63269,
+    },
+    title: '4',
+    description: '1',
+  },
+];
+
 export default class MapView extends Component<{}> {
   render() {
     return (
       <View style={styles.root}>
-        <MapViewBase style={styles.mapBase} initialRegion={initialRegion} />
+        <MapViewBase style={styles.mapBase} initialRegion={initialRegion}>
+          {markers.map(({id, ...otherProps}) => (
+            <Marker key={id} {...otherProps} />
+          ))}
+        </MapViewBase>
       </View>
     );
   }
