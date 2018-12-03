@@ -8,6 +8,37 @@ import Marker from './Marker';
 
 import type {Marker as MarkerShape, Region} from '../types/Maps';
 
+type Props = {
+  onMarkerPress?: () => void,
+};
+
+export default class MapView extends Component<Props> {
+  render() {
+    return (
+      <View style={styles.root}>
+        <MapViewBase style={styles.mapBase} initialRegion={initialRegion}>
+          {markers.map(({id, ...otherProps}) => (
+            <Marker
+              key={id}
+              {...otherProps}
+              onPress={this.props.onMarkerPress}
+            />
+          ))}
+        </MapViewBase>
+      </View>
+    );
+  }
+}
+
+let styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
+  mapBase: {
+    flex: 1,
+  },
+});
+
 let initialRegion: Region = {
   latitude: -6.221965,
   longitude: 106.632696,
@@ -53,26 +84,3 @@ let markers: MarkerShape[] = [
     description: '1',
   },
 ];
-
-export default class MapView extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.root}>
-        <MapViewBase style={styles.mapBase} initialRegion={initialRegion}>
-          {markers.map(({id, ...otherProps}) => (
-            <Marker key={id} {...otherProps} />
-          ))}
-        </MapViewBase>
-      </View>
-    );
-  }
-}
-
-let styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-  mapBase: {
-    flex: 1,
-  },
-});
