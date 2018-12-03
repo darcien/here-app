@@ -6,6 +6,8 @@ import {Toolbar} from 'react-native-material-ui';
 
 import MapView from '../../components/MapView';
 
+import {statusBarHeight} from '../../constants/sizes';
+
 type Props = {
   navigation: *,
 };
@@ -29,5 +31,6 @@ let styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: statusBarHeight,
   },
 });

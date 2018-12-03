@@ -18,15 +18,15 @@ let Router = createDrawerNavigator(
     Map: {
       screen: MapScene,
     },
-    About: {
-      screen: AboutScene,
-    },
     Reward: {
       screen: RewardScene,
     },
+    About: {
+      screen: AboutScene,
+    },
   },
   {
-    initialRouteName: 'Reward',
+    initialRouteName: 'Map',
   },
 );
 

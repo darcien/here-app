@@ -1,8 +1,8 @@
 // @flow
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-export default class MapScene extends React.Component {
+export default class MapScene extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
