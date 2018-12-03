@@ -6,7 +6,7 @@ import {Button, Card, Divider, Toolbar} from 'react-native-material-ui';
 import {dummyData} from './DummyData';
 import {statusBarHeight} from '../../constants/sizes';
 
-export default class RewardScene extends Component<*> {
+export default class RewardsScene extends Component<*> {
   _keyExtractor = (item) => item.id;
 
   _renderItem = ({item}) => (

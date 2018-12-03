@@ -4,8 +4,8 @@ import {createDrawerNavigator} from 'react-navigation';
 import {AppLoading} from 'expo';
 
 import AboutScene from './scenes/About/AboutScene';
-import MapScene from './scenes/Map/MapScene';
-import RewardScene from './scenes/Reward/RewardScene';
+import MapRouter from './scenes/Map/MapRouter';
+import RewardsScene from './scenes/Rewards/RewardsScene';
 
 import cacheFonts from './helpers/cacheFonts';
 
@@ -16,10 +16,10 @@ type State = {
 let Router = createDrawerNavigator(
   {
     Map: {
-      screen: MapScene,
+      screen: MapRouter,
     },
-    Reward: {
-      screen: RewardScene,
+    Rewards: {
+      screen: RewardsScene,
     },
     About: {
       screen: AboutScene,
