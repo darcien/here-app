@@ -31,5 +31,5 @@ export type Marker = {
   id: string,
   coordinate: LatLng,
   title: string,
-  description: string,
+  description?: string,
 };
