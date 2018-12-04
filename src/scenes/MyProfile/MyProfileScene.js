@@ -21,7 +21,7 @@ export default class MapScene extends Component<Props, {}> {
             <View style={styles.avatar}>
               <Text style={styles.textAvatar}>S</Text>
             </View>
-            <Text style={styles.textName}>Sampah</Text>
+            <Text style={styles.textName}>Surya</Text>
           </View>
           <Card>
             <View style={styles.pointContainer}>
