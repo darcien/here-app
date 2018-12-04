@@ -27,7 +27,7 @@ export default class MapScene extends Component<Props, State> {
     }, 3000);
   }
   _renderContent() {
-    return <Text>hehe</Text>;
+    return <Text>redirect to result scene</Text>;
   }
 
   _renderLoading() {
