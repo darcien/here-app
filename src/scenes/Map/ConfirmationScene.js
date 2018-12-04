@@ -1,7 +1,7 @@
 // @flow
 
 import React, {Component} from 'react';
-import {ActivityIndicator, StyleSheet, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import {Toolbar} from 'react-native-material-ui';
 
 import {statusBarHeight} from '../../constants/sizes';
@@ -11,9 +11,35 @@ type Props = {
   navigation: *,
 };
 
-type State = {};
+type State = {
+  showContent: boolean,
+};
 
 export default class MapScene extends Component<Props, State> {
+  state: State = {
+    showContent: false,
+  };
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        showContent: true,
+      });
+    }, 3000);
+  }
+  _renderContent() {
+    return <Text>redirect to result scene</Text>;
+  }
+
+  _renderLoading() {
+    return (
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <ActivityIndicator animating={true} size="large" color="black" />
+        <Text style={{fontFamily: 'Roboto-LightItalic', fontSize: 20}}>
+          Waiting you to put trash to Qui bin .....
+        </Text>
+      </View>
+    );
+  }
   render() {
     let {navigation} = this.props;
 
@@ -30,7 +56,10 @@ export default class MapScene extends Component<Props, State> {
           }`}
         />
         <View style={styles.content}>
-          <ActivityIndicator animating={true} size="large" color="black" />
+          {/* <ActivityIndicator animating={true} size="large" color="black" /> */}
+          {this.state.showContent
+            ? this._renderContent()
+            : this._renderLoading()}
         </View>
       </View>
     );

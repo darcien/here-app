@@ -6,6 +6,7 @@ import {AppLoading} from 'expo';
 import AboutScene from './scenes/About/AboutScene';
 import MapRouter from './scenes/Map/MapRouter';
 import RewardsScene from './scenes/Rewards/RewardsScene';
+import MyProfileScene from './scenes/MyProfile/MyProfileScene';
 
 import cacheFonts from './helpers/cacheFonts';
 
@@ -23,6 +24,9 @@ let Router = createDrawerNavigator(
     },
     About: {
       screen: AboutScene,
+    },
+    MyProfile: {
+      screen: MyProfileScene,
     },
   },
   {
