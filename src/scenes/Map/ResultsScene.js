@@ -1,7 +1,7 @@
 // @flow
 
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, ScrollView} from 'react-native';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import {Button, Toolbar, Subheader, ListItem} from 'react-native-material-ui';
 
 import {statusBarHeight} from '../../constants/sizes';
@@ -60,8 +60,18 @@ export default class ResultsScene extends Component<Props, State> {
 let data = [
   {
     id: '1',
-    name: 'PET Bottle',
-    amount: 2,
+    name: 'PET Bottle (M)',
+    amount: 3,
+  },
+  {
+    id: '2',
+    name: 'Plastic Bag (L)',
+    amount: 1,
+  },
+  {
+    id: '2',
+    name: 'Plastic Wrapper (S)',
+    amount: 4,
   },
 ];
 
