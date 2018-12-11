@@ -1,7 +1,6 @@
-import Kereta from './kereta.jpg';
-import Kunci from './kunci.jpg';
-import Permen from './permen.jpg';
-import Piring from './piring.jpg';
-import Sabun from './sabun.jpg';
+// @flow
 
-export {Kereta, Kunci, Permen, Piring, Sabun};
+export {default as Itunes} from './itunes.jpg';
+export {default as Kintan} from './kintan.jpg';
+export {default as Starbucks} from './starbucks.jpg';
+export {default as Xl} from './xl_logo.png';

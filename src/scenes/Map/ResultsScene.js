@@ -42,7 +42,7 @@ export default class ResultsScene extends Component<Props, State> {
               <ListItem
                 key={datum.id}
                 divider
-                centerElement={`${datum.name} ${datum.amount}x`}
+                centerElement={`${datum.name} x${datum.amount}`}
               />
             ))}
           </ScrollView>
@@ -69,7 +69,7 @@ let data = [
     amount: 1,
   },
   {
-    id: '2',
+    id: '3',
     name: 'Plastic Wrapper (S)',
     amount: 4,
   },

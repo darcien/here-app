@@ -1,48 +1,32 @@
-import {Kereta, Kunci, Permen, Piring, Sabun} from '../../assets/images';
+// @flow
+import {Itunes, Kintan, Starbucks, Xl} from '../../assets/images';
 
-export let dummyData = [
+type Reward = {
+  id: string,
+  name: string,
+  description?: string,
+  source: *,
+};
+
+export let dummyData: Reward[] = [
   {
     id: '1',
-    name: 'Sabun Cuci Piring',
-    description: 'sabun dashyat cuci bersih piring sampai hilang',
-    source: Sabun,
+    name: 'iTunes Gift Card ($25)',
+    source: Itunes,
   },
   {
     id: '2',
-    name: 'Permen Karet Super',
-    description: 'kunyah terus tak pernah habis',
-    source: Permen,
-  },
-  {id: '3', name: 'Kunci Besi', description: 'untuk buka pintu', source: Kunci},
-  {id: '4', name: 'Piring Cantik', description: 'untuk makan', source: Piring},
-  {
-    id: '5',
-    name: 'Kereta Lokomotif',
-    description: 'untuk berkendara',
-    source: Kereta,
+    name: 'Voucher Kintan (IDR 50K)',
+    source: Kintan,
   },
   {
-    id: '6',
-    name: 'Kereta Lokomotif',
-    description: 'untuk berkendara',
-    source: Kereta,
+    id: '3',
+    name: 'Free Starbucks Frappuccino',
+    source: Starbucks,
   },
   {
-    id: '7',
-    name: 'Kereta Lokomotif',
-    description: 'untuk berkendara',
-    source: Kereta,
-  },
-  {
-    id: '8',
-    name: 'Kereta Lokomotif',
-    description: 'untuk berkendara',
-    source: Kereta,
-  },
-  {
-    id: '9',
-    name: 'Kereta Lokomotif',
-    description: 'untuk berkendara',
-    source: Kereta,
+    id: '4',
+    name: 'Pulsa XL (IDR 25K)',
+    source: Xl,
   },
 ];

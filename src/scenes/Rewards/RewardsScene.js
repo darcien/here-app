@@ -16,7 +16,7 @@ export default class RewardsScene extends Component<*> {
         <View style={styles.separatorVertical} />
         <View style={styles.itemDesc}>
           <Text style={styles.textName}>{item.name}</Text>
-          <Text style={styles.textDesc}>{item.description}</Text>
+          {/* <Text style={styles.textDesc}>{item.description}</Text> */}
         </View>
         <View style={styles.button}>
           <Button raised primary text="Exchange" />
@@ -31,7 +31,7 @@ export default class RewardsScene extends Component<*> {
         <Toolbar
           leftElement="menu"
           onLeftElementPress={this.props.navigation.toggleDrawer}
-          centerElement="Exchange Rewards"
+          centerElement="Rewards"
         />
 
         <FlatList
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
   },
   textName: {
     fontFamily: 'Roboto-Bold',
+    fontSize: 20,
   },
   textDesc: {
     fontFamily: 'Roboto-Light',
