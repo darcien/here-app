@@ -3,9 +3,10 @@ import React, {Component} from 'react';
 import {createDrawerNavigator} from 'react-navigation';
 import {AppLoading} from 'expo';
 
-import AboutScene from './scenes/About/AboutScene';
+// import AboutScene from './scenes/About/AboutScene';
 import MapRouter from './scenes/Map/MapRouter';
 import RewardsScene from './scenes/Rewards/RewardsScene';
+import ScannerRouter from './scenes/Scanner/ScannerRouter';
 import MyProfileScene from './scenes/MyProfile/MyProfileScene';
 
 import cacheFonts from './helpers/cacheFonts';
@@ -19,12 +20,16 @@ let Router = createDrawerNavigator(
     Map: {
       screen: MapRouter,
     },
+    Scanner: {
+      screen: ScannerRouter,
+    },
     Rewards: {
       screen: RewardsScene,
     },
-    About: {
-      screen: AboutScene,
-    },
+    // Disable About scene until further notice.
+    // About: {
+    //   screen: AboutScene,
+    // },
     MyProfile: {
       screen: MyProfileScene,
     },
