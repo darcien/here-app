@@ -1,7 +1,7 @@
 // @flow
 
 import React, {Component} from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import {View, Image, StyleSheet, Platform} from 'react-native';
 import {MapView as MapViewBase} from 'expo';
 
 import binImage from '../assets/images/bin.png';
@@ -21,9 +21,15 @@ export default class Marker extends Component<Props> {
   render() {
     let {isSelected, ...otherProps} = this.props;
     return (
-      <MapViewBase.Marker {...otherProps} onPress={this._onMarkerPress}>
+      <MapViewBase.Marker
+        {...otherProps}
+        onPress={this._onMarkerPress}
+        image={Platform.OS === 'android' ? binImage : null}
+      >
         <View style={[styles.root, isSelected && styles.rootSelected]}>
-          <Image source={binImage} style={styles.markerImage} />
+          {Platform.OS === 'ios' && (
+            <Image source={binImage} style={styles.markerImage} />
+          )}
         </View>
       </MapViewBase.Marker>
     );
